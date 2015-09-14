@@ -1,2 +1,6 @@
 /Carthage
 /Cartfile.resolved
+PromiseKit.xcodeproj/xcuserdata
+PromiseKit.xcodeproj/project.xcworkspace/xcuserdata
+PromiseKit.xcodeproj/project.xcworkspace/xcshareddata
+DerivedData

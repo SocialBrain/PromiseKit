@@ -8,4 +8,4 @@ FOUNDATION_EXPORT const unsigned char PromiseKitVersionString[];
 
 // for convenience and better error messages if you don’t
 // have OMGHTTPURLRQ available and to hand
-@import OMGHTTPURLRQ;
+//@import OMGHTTPURLRQ;

@@ -187,7 +187,7 @@ public class Promise<T> {
         return then(onQueue: dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), body: body)
     }
 
-    public func catch(onQueue q:dispatch_queue_t = dispatch_get_main_queue(), body:(NSError) -> T) -> Promise<T> {
+    public func catchT(onQueue q:dispatch_queue_t = dispatch_get_main_queue(), body:(NSError) -> T) -> Promise<T> {
         return Promise<T>{ (fulfill, _) in
             let handler = { ()->() in
                 switch self.state {
@@ -213,7 +213,7 @@ public class Promise<T> {
         }
     }
 
-    public func catch(onQueue q:dispatch_queue_t = dispatch_get_main_queue(), body:(NSError) -> Void) -> Void {
+    public func catchVoid(onQueue q:dispatch_queue_t = dispatch_get_main_queue(), body:(NSError) -> Void) -> Void {
         let handler = { ()->() in
             switch self.state {
             case .Rejected(let error):
@@ -237,7 +237,7 @@ public class Promise<T> {
         }
     }
 
-    public func catch(onQueue q:dispatch_queue_t = dispatch_get_main_queue(), body:(NSError) -> Promise<T>) -> Promise<T> {
+    public func catchPromise(onQueue q:dispatch_queue_t = dispatch_get_main_queue(), body:(NSError) -> Promise<T>) -> Promise<T> {
         return Promise<T>{ (fulfill, reject) in
 
             let handler = { ()->() in
